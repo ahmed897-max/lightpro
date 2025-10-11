@@ -7,9 +7,15 @@ interface MegaMenuItem {
   link: string;
 }
 
-interface Category {
+interface SubCategory {
   name: string;
   items: MegaMenuItem[];
+}
+
+interface Category {
+  name: string;
+  items?: MegaMenuItem[];
+  subcategories?: SubCategory[];
   featured?: {
     title: string;
     description: string;
@@ -24,53 +30,45 @@ const Navbar = () => {
 
   const categories: Category[] = [
     {
-      name: 'LED Strips',
-      items: [
-        { name: 'Flexible LED Strips', image: 'https://images.pexels.com/photos/1112598/pexels-photo-1112598.jpeg?auto=compress&cs=tinysrgb&w=300', link: '#' },
-        { name: 'Rigid LED Strips', image: 'https://images.pexels.com/photos/1194713/pexels-photo-1194713.jpeg?auto=compress&cs=tinysrgb&w=300', link: '#' },
-        { name: 'RGB & Color Changing', image: 'https://images.pexels.com/photos/1062249/pexels-photo-1062249.jpeg?auto=compress&cs=tinysrgb&w=300', link: '#' },
-        { name: 'High Output Strips', image: 'https://images.pexels.com/photos/1457847/pexels-photo-1457847.jpeg?auto=compress&cs=tinysrgb&w=300', link: '#' },
-        { name: 'IP-Rated Waterproof', image: 'https://images.pexels.com/photos/1029604/pexels-photo-1029604.jpeg?auto=compress&cs=tinysrgb&w=300', link: '#' },
-        { name: 'Smart LED Strips', image: 'https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg?auto=compress&cs=tinysrgb&w=300', link: '#' }
-      ],
-      featured: {
-        title: 'New: Smart RGB LED Strips',
-        description: 'App-controlled color changing strips with voice control',
-        image: 'https://images.pexels.com/photos/1308624/pexels-photo-1308624.jpeg?auto=compress&cs=tinysrgb&w=400',
-        link: '#'
-      }
-    },
-    {
       name: 'Products',
-      items: [
-        { name: 'LED Fixtures', image: 'https://images.pexels.com/photos/1449773/pexels-photo-1449773.jpeg?auto=compress&cs=tinysrgb&w=300', link: '#' },
-        { name: 'LED Lamps & Bulbs', image: 'https://images.pexels.com/photos/1108572/pexels-photo-1108572.jpeg?auto=compress&cs=tinysrgb&w=300', link: '#' },
-        { name: 'Traditional Lighting', image: 'https://images.pexels.com/photos/1210276/pexels-photo-1210276.jpeg?auto=compress&cs=tinysrgb&w=300', link: '#' },
-        { name: 'Sensors & Controls', image: 'https://images.pexels.com/photos/159358/alarm-systems-security-device-security-system-house-alarm-159358.jpeg?auto=compress&cs=tinysrgb&w=300', link: '#' },
-        { name: 'Emergency Lighting', image: 'https://images.pexels.com/photos/618612/pexels-photo-618612.jpeg?auto=compress&cs=tinysrgb&w=300', link: '#' },
-        { name: 'Specialty Products', image: 'https://images.pexels.com/photos/459335/pexels-photo-459335.jpeg?auto=compress&cs=tinysrgb&w=300', link: '#' }
+      subcategories: [
+        {
+          name: 'LED Strips',
+          items: [
+            { name: 'Flexible LED Strips', image: 'https://images.pexels.com/photos/1112598/pexels-photo-1112598.jpeg?auto=compress&cs=tinysrgb&w=300', link: '#' },
+            { name: 'Rigid LED Strips', image: 'https://images.pexels.com/photos/1194713/pexels-photo-1194713.jpeg?auto=compress&cs=tinysrgb&w=300', link: '#' },
+            { name: 'RGB & Color Changing', image: 'https://images.pexels.com/photos/1062249/pexels-photo-1062249.jpeg?auto=compress&cs=tinysrgb&w=300', link: '#' },
+            { name: 'High Output Strips', image: 'https://images.pexels.com/photos/1457847/pexels-photo-1457847.jpeg?auto=compress&cs=tinysrgb&w=300', link: '#' },
+            { name: 'IP-Rated Waterproof', image: 'https://images.pexels.com/photos/1029604/pexels-photo-1029604.jpeg?auto=compress&cs=tinysrgb&w=300', link: '#' },
+            { name: 'Smart LED Strips', image: 'https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg?auto=compress&cs=tinysrgb&w=300', link: '#' }
+          ]
+        },
+        {
+          name: 'Panels & Fixtures',
+          items: [
+            { name: 'LED Panels', image: 'https://images.pexels.com/photos/573130/pexels-photo-573130.jpeg?auto=compress&cs=tinysrgb&w=300', link: '#' },
+            { name: 'Troffer Fixtures', image: 'https://images.pexels.com/photos/1694360/pexels-photo-1694360.jpeg?auto=compress&cs=tinysrgb&w=300', link: '#' },
+            { name: 'Surface Mount', image: 'https://images.pexels.com/photos/1910236/pexels-photo-1910236.jpeg?auto=compress&cs=tinysrgb&w=300', link: '#' },
+            { name: 'Pendant Fixtures', image: 'https://images.pexels.com/photos/1116558/pexels-photo-1116558.jpeg?auto=compress&cs=tinysrgb&w=300', link: '#' },
+            { name: 'Track Lighting', image: 'https://images.pexels.com/photos/1648776/pexels-photo-1648776.jpeg?auto=compress&cs=tinysrgb&w=300', link: '#' },
+            { name: 'Outdoor Fixtures', image: 'https://images.pexels.com/photos/1684979/pexels-photo-1684979.jpeg?auto=compress&cs=tinysrgb&w=300', link: '#' }
+          ]
+        },
+        {
+          name: 'Other Products',
+          items: [
+            { name: 'LED Lamps & Bulbs', image: 'https://images.pexels.com/photos/1108572/pexels-photo-1108572.jpeg?auto=compress&cs=tinysrgb&w=300', link: '#' },
+            { name: 'Traditional Lighting', image: 'https://images.pexels.com/photos/1210276/pexels-photo-1210276.jpeg?auto=compress&cs=tinysrgb&w=300', link: '#' },
+            { name: 'Sensors & Controls', image: 'https://images.pexels.com/photos/159358/alarm-systems-security-device-security-system-house-alarm-159358.jpeg?auto=compress&cs=tinysrgb&w=300', link: '#' },
+            { name: 'Emergency Lighting', image: 'https://images.pexels.com/photos/618612/pexels-photo-618612.jpeg?auto=compress&cs=tinysrgb&w=300', link: '#' },
+            { name: 'Specialty Products', image: 'https://images.pexels.com/photos/459335/pexels-photo-459335.jpeg?auto=compress&cs=tinysrgb&w=300', link: '#' }
+          ]
+        }
       ],
       featured: {
         title: 'Energy Star Certified',
         description: 'Save up to 80% on energy costs with our certified products',
         image: 'https://images.pexels.com/photos/157811/pexels-photo-157811.jpeg?auto=compress&cs=tinysrgb&w=400',
-        link: '#'
-      }
-    },
-    {
-      name: 'Panels & Fixtures',
-      items: [
-        { name: 'LED Panels', image: 'https://images.pexels.com/photos/573130/pexels-photo-573130.jpeg?auto=compress&cs=tinysrgb&w=300', link: '#' },
-        { name: 'Troffer Fixtures', image: 'https://images.pexels.com/photos/1694360/pexels-photo-1694360.jpeg?auto=compress&cs=tinysrgb&w=300', link: '#' },
-        { name: 'Surface Mount', image: 'https://images.pexels.com/photos/1910236/pexels-photo-1910236.jpeg?auto=compress&cs=tinysrgb&w=300', link: '#' },
-        { name: 'Pendant Fixtures', image: 'https://images.pexels.com/photos/1116558/pexels-photo-1116558.jpeg?auto=compress&cs=tinysrgb&w=300', link: '#' },
-        { name: 'Track Lighting', image: 'https://images.pexels.com/photos/1648776/pexels-photo-1648776.jpeg?auto=compress&cs=tinysrgb&w=300', link: '#' },
-        { name: 'Outdoor Fixtures', image: 'https://images.pexels.com/photos/1684979/pexels-photo-1684979.jpeg?auto=compress&cs=tinysrgb&w=300', link: '#' }
-      ],
-      featured: {
-        title: 'Architectural Lighting',
-        description: 'Premium fixtures for commercial and residential projects',
-        image: 'https://images.pexels.com/photos/2251247/pexels-photo-2251247.jpeg?auto=compress&cs=tinysrgb&w=400',
         link: '#'
       }
     }
@@ -118,27 +116,36 @@ const Navbar = () => {
                 </button>
 
                 {activeDropdown === category.name && (
-                  <div className="absolute top-full left-1/2 -translate-x-1/2 mt-0 w-[800px] bg-white shadow-2xl rounded-lg border border-gray-100 p-6">
-                    <div className="grid grid-cols-3 gap-4">
-                      <div className="col-span-2 grid grid-cols-2 gap-4">
-                        {category.items.map((item) => (
-                          <a
-                            key={item.name}
-                            href={item.link}
-                            className="flex items-start space-x-3 p-3 rounded-lg hover:bg-blue-50 transition group/item"
-                          >
-                            <img
-                              src={item.image}
-                              alt={item.name}
-                              className="w-16 h-16 object-cover rounded-lg"
-                            />
-                            <div className="flex-1">
-                              <h4 className="font-medium text-slate-900 group-hover/item:text-blue-600 transition">
-                                {item.name}
-                              </h4>
-                              <p className="text-xs text-slate-500 mt-1">View Products</p>
+                  <div className="absolute top-full left-1/2 -translate-x-1/2 mt-0 w-[900px] bg-white shadow-2xl rounded-lg border border-gray-100 p-6">
+                    <div className="grid grid-cols-4 gap-6">
+                      <div className="col-span-3">
+                        {category.subcategories && category.subcategories.map((subcategory) => (
+                          <div key={subcategory.name} className="mb-6">
+                            <h3 className="text-sm font-bold text-slate-900 mb-3 uppercase tracking-wide border-b pb-2">
+                              {subcategory.name}
+                            </h3>
+                            <div className="grid grid-cols-2 gap-3">
+                              {subcategory.items.map((item) => (
+                                <a
+                                  key={item.name}
+                                  href={item.link}
+                                  className="flex items-start space-x-3 p-2 rounded-lg hover:bg-blue-50 transition group/item"
+                                >
+                                  <img
+                                    src={item.image}
+                                    alt={item.name}
+                                    className="w-14 h-14 object-cover rounded-lg"
+                                  />
+                                  <div className="flex-1">
+                                    <h4 className="font-medium text-sm text-slate-900 group-hover/item:text-blue-600 transition">
+                                      {item.name}
+                                    </h4>
+                                    <p className="text-xs text-slate-500 mt-1">View Products</p>
+                                  </div>
+                                </a>
+                              ))}
                             </div>
-                          </a>
+                          </div>
                         ))}
                       </div>
 
@@ -206,20 +213,29 @@ const Navbar = () => {
                   <ChevronDown className={`w-4 h-4 transition-transform ${activeDropdown === category.name ? 'rotate-180' : ''}`} />
                 </button>
                 {activeDropdown === category.name && (
-                  <div className="pl-4 space-y-2">
-                    {category.items.map((item) => (
-                      <a
-                        key={item.name}
-                        href={item.link}
-                        className="flex items-center space-x-3 py-2 text-slate-600 hover:text-blue-600"
-                      >
-                        <img
-                          src={item.image}
-                          alt={item.name}
-                          className="w-12 h-12 object-cover rounded"
-                        />
-                        <span>{item.name}</span>
-                      </a>
+                  <div className="pl-4 space-y-4">
+                    {category.subcategories && category.subcategories.map((subcategory) => (
+                      <div key={subcategory.name}>
+                        <h3 className="text-xs font-bold text-slate-900 mb-2 uppercase tracking-wide">
+                          {subcategory.name}
+                        </h3>
+                        <div className="space-y-2">
+                          {subcategory.items.map((item) => (
+                            <a
+                              key={item.name}
+                              href={item.link}
+                              className="flex items-center space-x-3 py-2 text-slate-600 hover:text-blue-600"
+                            >
+                              <img
+                                src={item.image}
+                                alt={item.name}
+                                className="w-12 h-12 object-cover rounded"
+                              />
+                              <span className="text-sm">{item.name}</span>
+                            </a>
+                          ))}
+                        </div>
+                      </div>
                     ))}
                   </div>
                 )}
