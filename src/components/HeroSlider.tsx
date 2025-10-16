@@ -90,13 +90,13 @@ const HeroSlider = () => {
                 <h2 className="text-5xl md:text-6xl font-bold text-white mb-4 animate-fade-in">
                   {slide.title}
                 </h2>
-                <p className="text-2xl md:text-3xl text-blue-400 mb-4 font-semibold">
+                <p className="text-2xl md:text-3xl text-primary-400 mb-4 font-semibold">
                   {slide.subtitle}
                 </p>
                 <p className="text-lg md:text-xl text-gray-200 mb-8">
                   {slide.description}
                 </p>
-                <button className="bg-blue-600 text-white px-8 py-4 rounded-lg hover:bg-blue-700 transition flex items-center space-x-2 text-lg font-semibold group">
+                <button className="bg-primary-600 text-white px-8 py-4 rounded-lg hover:bg-primary-700 transition flex items-center space-x-2 text-lg font-semibold group">
                   <span>{slide.cta}</span>
                   <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition" />
                 </button>
@@ -126,7 +126,7 @@ const HeroSlider = () => {
             key={index}
             onClick={() => goToSlide(index)}
             className={`h-2 rounded-full transition-all ${
-              index === currentSlide ? 'w-8 bg-blue-600' : 'w-2 bg-white/50 hover:bg-white/75'
+              index === currentSlide ? 'w-8 bg-primary-600' : 'w-2 bg-white/50 hover:bg-white/75'
             }`}
           />
         ))}
